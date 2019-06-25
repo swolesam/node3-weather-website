@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Weather</title>
+        
+        <!-- !!! VERY COOL feature ... setting the icon as an image to appear on the tab in the browser!!! -->
+        <link rel="icon" href="/img/weather_icon.png">
+
+        <link rel="stylesheet" href="/css/style.css">
+
+    </head>
+
+    <body>
+        <!-- use the FLEX BOX paradigm -->
+        <div class="main-content">
+            {{>header}}
+            <p>Use this site to get your Weather !</p>
+            <!-- <p>Created by {{name}}</p>  -->
+        
+            <form>
+                <input placeholder="Location">
+                <button>Search</button>
+            </form>
+
+            <!-- create 2 containers to push the output from the server side calls into -->
+            <p id="message-1"></p>
+            <p id="message-2"></p>
+
+        </div>
+
+        <!-- Load the script after the FORM is loaded since the script will work w/ the Form and that form needs to be loaded first ! -->
+        <script src="/js/app.js"></script>
+
+        <BR/>
+        {{>footer}}
+    </body>
+</html> 

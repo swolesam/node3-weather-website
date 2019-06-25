@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Help</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+        <div class="main-content">
+            <!-- no need to specify the path of the Partial or the File Extension.  -->
+            {{>header}}
+
+            <BR/>
+            These values are injected Dynamically into the HBS template:
+            <ul>
+                <li>Name: {{name}}</li>
+                <li>Age: {{age}}</li>
+                <li>Gender: {{gender}}</li>
+            </ul>
+        </div>
+
+        <BR/>
+        {{>footer}}
+    </body>
+</html>
