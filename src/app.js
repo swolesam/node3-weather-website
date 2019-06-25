@@ -5,7 +5,7 @@ const express = require('express') ;
 const app = express() ;
 
 const hbs = require('hbs') ;
-
+ 
 const geocode = require('./utils/geocode') ;
 const forecast = require('./utils/forecast') ;
 
