@@ -4,6 +4,9 @@ const chalk = require('chalk') ;
 const express = require('express') ;
 const app = express() ;
 
+// assign variable port to the ENVIRONMENT VAR "PORT" (thats how Heroku provides it) OR fall back on port 3000 instead.
+const port = process.env.PORT || 3000 ;
+
 const hbs = require('hbs') ;
  
 const geocode = require('./utils/geocode') ;
@@ -197,6 +200,7 @@ app.get('*' , (req, res) => {
 
 
 // START UP Server (ExpressJS lib) ... access it locally via http://localhost:3000/
-app.listen(3000, () => {
+// You can use 3000 locally, but when you deploy it on heroku it will be provided to you via an Env Var .. simply use the const "port"
+app.listen(port, () => {
     console.log('Server is up on port 3000') ;
 }) ;

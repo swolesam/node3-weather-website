@@ -35,7 +35,9 @@ weatherForm.addEventListener('submit' , (e) => {
     message1.textContent = 'Loading... ' ;
     message1.textContent = '' ;
 
-    const url = 'http://localhost:3000/weather?address=' + location ;
+    // change URL to a RELATIVE URL and not absolute.
+    // const url = 'http://localhost:3000/weather?address=' + location ;
+    const url = '/weather?address=' + location ;
 
     fetch(url).then( (response) => {
         /** mess up the url above, and execute again... 
