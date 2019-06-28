@@ -23,10 +23,17 @@ const forecast = (longitude, latitude, callbackMeth) => {
             const dailyNode = response.body.daily ;
             const dailyTodayNode = dailyNode.data[0] ;
             const dailyTodaySummaryNode = dailyTodayNode.summary ;
+            const humidity = dailyTodayNode.humidity ;
+            const tempHigh = dailyTodayNode.temperatureHigh ;
+            const tempLow = dailyTodayNode.temperatureLow ;
+            
             console.log(chalk.yellow('Todays summary =', dailyTodaySummaryNode));
 
             const data = {
-                summary: dailyTodaySummaryNode
+                summary: dailyTodaySummaryNode ,
+                humidity: humidity ,
+                temperatureHigh: tempHigh ,
+                temperatureLow: tempLow
             }
 
             callbackMeth(undefined, data) ;
@@ -37,3 +44,11 @@ const forecast = (longitude, latitude, callbackMeth) => {
 }
 
 module.exports = forecast ;
+
+
+/**
+ * Example:
+ * Orlando:
+ * https://api.darksky.net/forecast/4b0e206fcbced52f3e0972201b28c3e7/-81.379,28.5421
+ * 
+ */

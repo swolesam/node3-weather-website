@@ -144,7 +144,10 @@ app.get('/weather' , (req, res) => {
 
             res.send({
                 location: req.query.address ,
-                weatherForecast: data.summary
+                weatherForecastSummary: data.summary ,
+                weatherForecastHumidity: data.humidity ,
+                weatherForecastTemperatureHigh: data.temperatureHigh ,
+                weatherForecastTemperatureLow: data.temperatureLow
             })
         })
 

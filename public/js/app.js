@@ -21,6 +21,8 @@ const search = document.querySelector('input')
 
 const message1 = document.querySelector('#message-1') ;
 const message2 = document.querySelector('#message-2') ;
+const message3 = document.querySelector('#message-3') ;
+const message4 = document.querySelector('#message-4') ;
 
 // message1.textContent = 'HELLO' ;
 
@@ -46,14 +48,21 @@ weatherForm.addEventListener('submit' , (e) => {
          */
         response.json().then( (data) => {
             /**
-                location: req.query.address ,
-                weatherForecast: data.summary
+                res.send({
+                    location: req.query.address ,
+                    weatherForecastSummary: data.summary ,
+                    weatherForecastHumidity: data.humidity ,
+                    weatherForecastTemperatureHigh: data.temperatureHigh ,
+                    weatherForecastTemperatureLow: data.temperatureLow
+            })
             */
         if(data.error) {
             message1.textContent = data.error ;
         } else {
             message1.textContent = data.location ; 
             message2.textContent = data.weatherForecast ;
+            message3.textContent = 'Humidity = ' + data.weatherForecastHumidity ;
+            message4.textContent = 'Temperature high=' + data.weatherForecastTemperatureHigh + ' , and Temperature Low=' + data.weatherForecastTemperatureLow ;
         }
 
         })

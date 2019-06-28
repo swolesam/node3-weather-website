@@ -38,3 +38,14 @@ const geocode = (location, callbackMethod) => {
 }
 
 module.exports = geocode ;
+
+
+/**
+ * Examples:
+ * https://api.mapbox.com/geocoding/v5/mapbox.places/orlando.json?access_token=pk.eyJ1Ijoid2ViZ3VydTEyMyIsImEiOiJjand3d2t2YmYwMTI5NGNtZ2llcWp1Z2xjIn0.tEAJkZiWUBg_NpsM9Xc3vA
+ * "center": [
+    -81.379,
+    28.5421
+    ],
+ * 
+ */
